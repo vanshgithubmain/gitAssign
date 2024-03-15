@@ -1,0 +1,28 @@
+name: Run C Program
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up C environment
+      uses: actions/setup-c-cache@v2
+      with:
+        c-version: '10'
+
+    - name: Compile program
+      run: gcc -o program program.c
+
+    - name: Run program
+      run: ./program
