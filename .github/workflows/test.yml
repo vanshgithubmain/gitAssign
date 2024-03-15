@@ -1,4 +1,4 @@
-name: C++ and Python Workflow
+name: Python and Multiline Script Workflow
 
 on:
   push:
@@ -9,19 +9,6 @@ on:
       - main
 
 jobs:
-  build_cpp:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Compile C++ program
-      run: g++ -o shrivastava ./VANSH-BATCH10/shrivastava.cpp
-
-    - name: Run C++ program
-      run: ./shrivastva
-
   run_python:
     runs-on: ubuntu-latest
 
@@ -36,3 +23,17 @@ jobs:
 
     - name: Run Python script
       run: python vansh.py
+
+  run_multiline_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run multiline script
+      run: |
+        echo "This is a multiline script."
+        echo "It can have multiple lines of commands."
+        echo "You can execute any command here."
+
