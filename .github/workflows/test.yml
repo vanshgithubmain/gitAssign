@@ -1,4 +1,4 @@
-name: Python Workflow
+name: C++ and Python Workflow
 
 on:
   push:
@@ -9,7 +9,20 @@ on:
       - main
 
 jobs:
-  build:
+  build_cpp:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Compile C++ program
+      run: g++ -o shrivastava shrivastava.cpp
+
+    - name: Run C++ program
+      run: ./shrivastva
+
+  run_python:
     runs-on: ubuntu-latest
 
     steps:
