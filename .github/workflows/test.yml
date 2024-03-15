@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Compile C++ program
-      run: g++ -o shrivastava shrivastava.cpp
+      run: g++ -o shrivastava ./VANSH-BATCH10/shrivastava.cpp
 
     - name: Run C++ program
       run: ./shrivastva
